@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body {
+        min-width: 357px;
+        overflow-x: hidden;
+        font-size: 14px;
+        margin-right: 20px; 
+    }
+
+
+      img {
+        margin: 5px;
+        border: 2px solid black;
+        vertical-align: middle;
+        width: 75px;
+        height: 75px;
+      }
+
+        .supersaver {
+            color: red;
+        
+        }
+  </style>
+
+    <!--
+
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
+
+     -->
+
+    <script src="popup.js"></script>
+  </head>
+  <body>
+ 
+    <h1>FT-Sushi</h1>
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,900' rel='stylesheet' type='text/css'>
+    <link href='animate.css' rel='stylesheet' type='text/css'>
+    <style>
+  
+    h1 {
+        color: rgb(218, 26, 81);
+        font-family: 'Raleway', sans-serif;
+        text-shadow: 0 0 3px orange;
+        font-size: 20px;
+    }
+    
+    h2 {
+        font-family: sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        color: #000;
+    }
+ 
+    .menu__list {
+        margin-left: 0;
+        padding-left: 0;
+        margin-bottom:
+    }
+
+    .menu__pricepoint {
+        list-style: none;
+        padding-bottom: 20px;
+        margin-left: 0;
+        padding-left: 0;
+        width: 70px;
+        float: left;        
+    }
+
+    .menu__list:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .menu__pricepoint-pence  {
+        display: inline-block;
+        border-radius: 100px;
+        width: 13px;
+        height: 13px;
+        color: black;
+        font-size: 13px;
+        text-indent: 20px;
+        line-height: 13px;
+    }
+    
+    .pricepoint-a  {
+        background: rgb(139, 171, 174);
+    }
+    .pricepoint-b  {
+        background: rgb(229, 22, 145);
+    }
+    .pricepoint-c  {
+        background: rgb(245, 111, 2);
+    }
+    .pricepoint-d  {
+        background: rgb(0, 172, 238);
+    }
+    .pricepoint-e  {
+        background: rgb(176, 213, 62);
+    }
+
+    .bill {
+        width: 100%;
+        max-width: 700px;
+        border-collapse: collapse;
+    }
+    
+    .bill td:nth-child(1) {
+        width: 30px;
+    }
+
+    .bill__item {
+        border-bottom: solid thin #ccc;
+    
+    }
+    
+    .bill__item td:nth-child(2) {
+        color: #333;
+        padding: 10px 10px 10px 0;
+    }
+
+    .bill__item td:nth-child(3) {
+        padding: 10px 0px 10px 0;
+        text-align: right;
+    }
+    
+    .bill__item-total {
+        padding: 10px 0px 10px 0;
+        text-align: right;
+        border-bottom: double 3px #ccc;
+    }
+    
+    .bill__item-net {
+        padding: 10px 0px 10px 0;
+        text-align: right;
+        border-bottom: double 5px #ccc;
+        border-top: double 5px #ccc;
+    }
+
+    .h {
+        display: none;
+    }
+    .h td { 
+        padding: 10px 0px 10px 0;
+        background-color: #eee;
+    }
+    .h:target {
+        display: table-row;
+    }
+
+    .history__list {
+        list-style-position: outside;
+        padding: 0;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+
+
+    .button {
+        float: right;
+        margin: 0 10px 10px 10px;
+    } 
+    
+    .button a {
+        color: #333;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    
+    .button a:hover {
+        color: #69e;
+    }
+    </style>
+
+    <ul class="menu__list">
+        <li class="menu__pricepoint">
+            <span class="menu__pricepoint-pence pricepoint-a">£1.00</span>
+        <li class="menu__pricepoint">
+            <span class="menu__pricepoint-pence pricepoint-b">£0.75</span>
+        <li class="menu__pricepoint">
+            <span class="menu__pricepoint-pence pricepoint-c">£0.50</span>
+        <li class="menu__pricepoint">
+            <span class="menu__pricepoint-pence pricepoint-d">£0.05</span>
+        <li class="menu__pricepoint">
+            <span class="menu__pricepoint-pence pricepoint-e">£0.02</span>
+    </ul>
+   
+    <table class="bill">
+        <tr>
+            <td colspan="3">
+                <h2>
+                    Things that you've read this week:
+                </h2> 
+            </td>
+        </tr>
+        <tr class="bill__item">
+            <td><span class="menu__pricepoint-pence pricepoint-a">&nbsp;</span></td>
+            <td>
+                <a href="#box1">3 x Martin Wolf, 2 x big page analysis @ £1</a>        
+            </td>
+            <td>£5.00</td>
+        </tr>
+        <tr class="h" id="box1">
+            <td></td>
+            <td colspan="2">
+                <p class="button">
+                    <a href="#">&#10006;</a>
+                </p>
+                <ul class="history__list">
+                    <li><a href="http://www.ft.com/cms/s/0/b4b18022-efc2-11e3-9b4c-00144feabdc0.html">Three events that shaped our world</a> - 12/6/2014</li>
+                    <li><a href="http://www.ft.com/cms/s/0/fe042c58-eca1-11e3-a754-00144feabdc0.html">Draghi has pulled another rabbit out of his hat</a> - 10/6/2014</li>
+                    <li><a href="http://www.ft.com/cms/s/0/fcfdf73a-e5ad-11e3-aeef-00144feabdc0.html">A split UK is not for a week but for ever</a> - 9/6/2014</li>
+                    <li><a href="http://www.ft.com/cms/s/2/b9f36660-ecaa-11e3-8963-00144feabdc0.html">Analysis - World Cup: Pitch battle</a> - 9/6/2014</li>
+                    <li><a href="http://www.ft.com/cms/s/0/c713b386-e674-11e3-9a20-00144feabdc0.html">Analysis - European banks: Still unstable</a> - 9/6/2014</li>
+                </ul>
+
+            </td>
+        </tr>
+        <tr class="bill__item">
+            <td><span class="menu__pricepoint-pence pricepoint-b">&nbsp;</span></td>
+            <td>4 x interview, 4 x life &amp; arts, 13 x weekend feature @ £0.75</td>
+            <td>£15.75</td>
+        </tr>
+        <tr class="bill__item">
+            <td><span class="menu__pricepoint-pence pricepoint-c">&nbsp;</span></td>
+            <td>9 x Lex @ £0.50</td>
+            <td>£4.50</td>
+        </tr>
+        <tr class="bill__item">
+            <td><span class="menu__pricepoint-pence pricepoint-d">&nbsp;</span></td>
+            <td>65 x alphaville, 32 x news analysis, 2 x personal finance, 8 x video @ £0.05</td>
+            <td>£5.35</td>
+        </tr>
+        <tr class="bill__item">
+            <td><span class="menu__pricepoint-pence pricepoint-e">&nbsp;</span></td>
+            <td>12 x blogs, 87 x fast FT, 30 x news (world, companies, market)</td>
+            <td>£2.58</td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td class="bill__item-total">£33.18p</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <h2 class="supersaver">
+                    Savings:
+                </h2> 
+            </td>
+        </tr>
+        <tr class="bill__item">
+            <td>&nbsp;</td>
+            <td>100 article bulk discount</td>
+            <td>-£2.00</td>
+        </tr>
+        <tr class="bill__item">
+            <td>&nbsp;</td>
+            <td>Gillian Tett Summer offer</td>
+            <td>-£0.50</td>
+        </tr>
+        <tr class="bill__item">
+            <td>&nbsp;</td>
+            <td>Martin Wolf - buy one get one free</td>
+            <td>-£1.00</td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td class="bill__item-total">-£3.50p</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <h2 class="supersaver">
+                    Capping: 
+                </h2> 
+            </td>
+        </tr>
+        <tr class="bill__item">
+            <td>&nbsp;</td>
+            <td>Weekly capping @ £20</td>
+            <td>-£14.74</td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td class="bill__item-total">-£14.74</td>
+        </tr>
+        <tr>
+            <td>
+                <h2>
+                    <strong>Total:</strong>
+                </h2> 
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td class="bill__item-net"><strong>£20.00</strong></td>
+        </tr>
+    </table>
+
+  </body>
+</html>
+
