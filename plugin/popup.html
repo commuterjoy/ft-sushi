@@ -19,6 +19,10 @@
         height: 75px;
       }
 
+        .save h2 {
+            xborder-top: 3px solid red;
+        }
+
         .supersaver {
             color: red;
         
@@ -49,10 +53,11 @@
         font-family: 'Raleway', sans-serif;
         text-shadow: 0 0 3px orange;
         font-size: 20px;
+        font-weight: normal;
     }
     
     h2 {
-        font-family: sans-serif;
+        font-family: 'Raleway', sans-serif;
         font-size: 16px;
         font-weight: normal;
         color: #000;
@@ -118,7 +123,10 @@
 
     .bill__item {
         border-bottom: solid thin #ccc;
+    }
     
+    .bill__item * {
+        font-size: 12px; 
     }
     
     .bill__item td:nth-child(2) {
@@ -253,29 +261,29 @@
             <td colspan="2"></td>
             <td class="bill__item-total">£33.18p</td>
         </tr>
-        <tr>
+        <tr class="save">
             <td colspan="3">
                 <h2 class="supersaver">
                     Savings:
                 </h2> 
             </td>
         </tr>
-        <tr class="bill__item">
+        <tr class="bill__item save">
             <td>&nbsp;</td>
             <td>100 article bulk discount</td>
             <td>-£2.00</td>
         </tr>
-        <tr class="bill__item">
+        <tr class="bill__item save">
             <td>&nbsp;</td>
             <td>Gillian Tett Summer offer</td>
             <td>-£0.50</td>
         </tr>
-        <tr class="bill__item">
+        <tr class="bill__item save">
             <td>&nbsp;</td>
             <td>Martin Wolf - buy one get one free</td>
             <td>-£1.00</td>
         </tr>
-        <tr>
+        <tr class="save">
             <td colspan="2"></td>
             <td class="bill__item-total">-£3.50p</td>
         </tr>
